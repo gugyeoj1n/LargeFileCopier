@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            checkBox1 = new CheckBox();
-            numericUpDown1 = new NumericUpDown();
+            testCheckBox = new CheckBox();
+            bufferSizeInput = new NumericUpDown();
             label1 = new Label();
             button1 = new Button();
             richTextBox1 = new RichTextBox();
             label2 = new Label();
-            richTextBox2 = new RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            outputTextBox = new RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)bufferSizeInput).BeginInit();
             SuspendLayout();
             // 
-            // checkBox1
+            // testCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(85, 173);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(106, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "임시 파일 생성";
-            checkBox1.UseVisualStyleBackColor = true;
+            testCheckBox.AutoSize = true;
+            testCheckBox.Location = new Point(85, 173);
+            testCheckBox.Name = "testCheckBox";
+            testCheckBox.Size = new Size(106, 19);
+            testCheckBox.TabIndex = 0;
+            testCheckBox.Text = "임시 파일 생성";
+            testCheckBox.UseVisualStyleBackColor = true;
+            testCheckBox.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // numericUpDown1
+            // bufferSizeInput
             // 
-            numericUpDown1.Location = new Point(206, 203);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(89, 23);
-            numericUpDown1.TabIndex = 1;
-            numericUpDown1.ValueChanged += this.numericUpDown1_ValueChanged;
+            bufferSizeInput.Location = new Point(206, 203);
+            bufferSizeInput.Name = "bufferSizeInput";
+            bufferSizeInput.Size = new Size(89, 23);
+            bufferSizeInput.TabIndex = 1;
+            bufferSizeInput.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // label1
             // 
@@ -64,7 +65,7 @@
             label1.Size = new Size(101, 15);
             label1.TabIndex = 2;
             label1.Text = "버퍼 사이즈 (MB)";
-            label1.Click += this.label1_Click;
+            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -74,6 +75,7 @@
             button1.TabIndex = 3;
             button1.Text = "복사";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // richTextBox1
             // 
@@ -82,6 +84,7 @@
             richTextBox1.Size = new Size(210, 96);
             richTextBox1.TabIndex = 4;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged_1;
             // 
             // label2
             // 
@@ -92,44 +95,44 @@
             label2.TabIndex = 5;
             label2.Text = "파일을 드래그하세요";
             // 
-            // richTextBox2
+            // outputTextBox
             // 
-            richTextBox2.BackColor = SystemColors.WindowText;
-            richTextBox2.ForeColor = SystemColors.Window;
-            richTextBox2.Location = new Point(27, 305);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(329, 144);
-            richTextBox2.TabIndex = 6;
-            richTextBox2.Text = "";
+            outputTextBox.BackColor = SystemColors.WindowText;
+            outputTextBox.ForeColor = SystemColors.Window;
+            outputTextBox.Location = new Point(27, 305);
+            outputTextBox.Name = "outputTextBox";
+            outputTextBox.Size = new Size(329, 144);
+            outputTextBox.TabIndex = 6;
+            outputTextBox.Text = "";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 461);
-            Controls.Add(richTextBox2);
+            Controls.Add(outputTextBox);
             Controls.Add(label2);
             Controls.Add(richTextBox1);
             Controls.Add(button1);
             Controls.Add(label1);
-            Controls.Add(numericUpDown1);
-            Controls.Add(checkBox1);
+            Controls.Add(bufferSizeInput);
+            Controls.Add(testCheckBox);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bufferSizeInput).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private CheckBox checkBox1;
-        private NumericUpDown numericUpDown1;
+        private CheckBox testCheckBox;
+        private NumericUpDown bufferSizeInput;
         private Label label1;
         private Button button1;
         private RichTextBox richTextBox1;
         private Label label2;
-        private RichTextBox richTextBox2;
+        private RichTextBox outputTextBox;
     }
 }
