@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LargeFileCopier")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6229353174bda04f69276fd9dda0f6ba4d8fd7a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("LargeFileCopier")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LargeFileCopier")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

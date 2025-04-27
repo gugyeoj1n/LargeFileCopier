@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cwj27\\source\\repos\\LargeFileCopier\\LargeFileCopier.csproj": {}
+    "C:\\Users\\cwj27\\Documents\\GitHub\\LargeFileCopier\\LargeFileCopier.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cwj27\\source\\repos\\LargeFileCopier\\LargeFileCopier.csproj": {
+    "C:\\Users\\cwj27\\Documents\\GitHub\\LargeFileCopier\\LargeFileCopier.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cwj27\\source\\repos\\LargeFileCopier\\LargeFileCopier.csproj",
+        "projectUniqueName": "C:\\Users\\cwj27\\Documents\\GitHub\\LargeFileCopier\\LargeFileCopier.csproj",
         "projectName": "LargeFileCopier",
-        "projectPath": "C:\\Users\\cwj27\\source\\repos\\LargeFileCopier\\LargeFileCopier.csproj",
+        "projectPath": "C:\\Users\\cwj27\\Documents\\GitHub\\LargeFileCopier\\LargeFileCopier.csproj",
         "packagesPath": "C:\\Users\\cwj27\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cwj27\\source\\repos\\LargeFileCopier\\obj\\",
+        "outputPath": "C:\\Users\\cwj27\\Documents\\GitHub\\LargeFileCopier\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
