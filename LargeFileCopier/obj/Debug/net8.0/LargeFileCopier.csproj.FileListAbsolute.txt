@@ -1,0 +1,14 @@
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\bin\Debug\net8.0\LargeFileCopier.exe
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\bin\Debug\net8.0\LargeFileCopier.deps.json
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\bin\Debug\net8.0\LargeFileCopier.runtimeconfig.json
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\bin\Debug\net8.0\LargeFileCopier.dll
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\bin\Debug\net8.0\LargeFileCopier.pdb
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.AssemblyInfoInputs.cache
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.AssemblyInfo.cs
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.csproj.CoreCompileInputs.cache
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.dll
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\refint\LargeFileCopier.dll
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.pdb
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\LargeFileCopier.genruntimeconfig.cache
+C:\Users\cwj27\RiderProjects\LargeFileCopier\LargeFileCopier\obj\Debug\net8.0\ref\LargeFileCopier.dll
