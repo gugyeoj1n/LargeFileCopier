@@ -9,43 +9,50 @@ namespace LargeFileCopier
 {
     public static class FileCopier
     {
+        private static string GetDestinationPath( string path )
+        {
+            int index = path.LastIndexOf( '.' );
+            return path.Substring( 0, index );
+        }
+
         static async Task TryCopy( string targetPath, int bufferSize )
         {
-            string sourceFile = Console.ReadLine( )?.Trim( );
-            string destinationFile = " ";
-            int sizeMB = 0;
-
-            CreateTestFile( sourceFile, sizeMB );
-
-            Console.WriteLine( "파일 복사 시작" );
+            string destinationFile = GetDestinationPath( targetPath );
+            Form1.AddOutputText( $"\n복사에 사용할 버퍼 사이즈를 {bufferSize} MB로 설정합니다." );
+            Form1.AddOutputText( $"\n복사를 시작합니다.\n" );
 
             var stopwatch = Stopwatch.StartNew( );
-            await CopyFile( sourceFile, bufferSize );
+            await CopyFile( targetPath, bufferSize );
             stopwatch.Stop( );
-
-            Console.WriteLine( $"\n복사 완료됨\n소요 시간: {stopwatch.Elapsed.TotalSeconds:F2}초" );
+            Form1.AddOutputText( $"\n복사가 완료되었습니다.\n소요 시간: {stopwatch.Elapsed.TotalSeconds:F2}초" );
 
             double fileSizeGB = new FileInfo( destinationFile ).Length / ( 1024.0 * 1024.0 * 1024.0 );
             double speed = fileSizeGB / stopwatch.Elapsed.TotalSeconds;
-            Console.WriteLine( $"평균 복사 속도: {speed:F2} GB/s" );
+            Form1.AddOutputText( $"\n평균 복사 속도: {speed:F2} GB/s" );
         }
 
-        static void CreateTestFile( string path, int sizeMB )
+        public static async Task CreateTestFile( string path, int bufferSize )
         {
+            Form1.AddOutputText( "10GB 용량의 임시 파일을 바탕 화면 경로에 생성합니다." );
             byte[] buffer = new byte[1024 * 1024];
             Random rnd = new Random( );
+            int sizeMB = 10240;
 
-            using var fs = new FileStream( path, FileMode.Create, FileAccess.Write );
+            using var fs = new FileStream( path, FileMode.Create, FileAccess.Write, FileShare.None, 4096, useAsync: true );
             for ( int i = 0; i < sizeMB; i++ )
             {
                 rnd.NextBytes( buffer );
-                fs.Write( buffer, 0, buffer.Length );
+                await fs.WriteAsync( buffer, 0, buffer.Length );
             }
+
+            Form1.AddOutputText( "\n임시 파일 생성이 완료되었습니다." );
+            await fs.FlushAsync( );
+            await TryCopy( path, bufferSize );
         }
 
         static async Task CopyFile( string sourcePath, int bufferSize )
         {
-            string destinationPath;
+            string destinationPath = GetDestinationPath( sourcePath );
             const double progressReportInterval = 1.0;
 
             try
@@ -54,9 +61,8 @@ namespace LargeFileCopier
                     sourcePath, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize,
                     FileOptions.Asynchronous | FileOptions.SequentialScan );
 
-                // 복사본 경로로 바꿔야 함
                 using var destinationStream = new FileStream(
-                    sourcePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize,
+                    destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize,
                     FileOptions.Asynchronous | FileOptions.SequentialScan );
 
                 byte[] buffer = new byte[bufferSize];
@@ -73,14 +79,14 @@ namespace LargeFileCopier
                     double progress = ( double ) totalRead / totalSize * 100;
                     if ( progress - lastReportedProgress >= progressReportInterval || totalRead == totalSize )
                     {
-                        Console.Write( $"\r진행률 : {progress:F2}%" );
+                        Form1.AddOutputText( $"\r진행률 : {progress:F2}%" );
                         lastReportedProgress = progress;
                     }
                 }
             }
             catch ( IOException ex )
             {
-                Console.WriteLine( $"\n파일 복사 중 오류 발생: {ex.Message}" );
+                Form1.AddOutputText( $"\n파일 복사 중 오류 발생: {ex.Message}" );
             }
         }
     }
